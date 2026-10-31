@@ -19,6 +19,50 @@ body {
   padding: 0;
 }
 
+/* ==========================================================================
+   Scrollbar
+   --------------------------------------------------------------------------
+   Two code paths, because Chromium ignores `::-webkit-scrollbar` as soon as
+   `scrollbar-width` is set — so declaring both would silently fall back to the
+   plain thin bar. Firefox gets the standard properties; Chromium and Safari get
+   the pseudo-elements, which is what allows the rounded capsule.
+
+   The thumb is inset by a border painted in the page colour, so it reads as a
+   floating capsule with air around it instead of a bar glued to the edge. Every
+   colour is a token, so both themes are covered without a second rule.
+   ========================================================================== */
+
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb);
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-hover);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 body {
   background: var(--ink);
   color: var(--fg);
