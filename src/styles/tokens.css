@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Tokens
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+
+  /* Surface */
+  --ink: #08090c;
+  --ink-2: #0d1015;
+  --ink-3: #12151c;
+  --paper: #f4efe6;
+
+  /* Text */
+  --fg: var(--paper);
+  --fg-muted: rgba(244, 239, 230, 0.58);
+  --fg-faint: rgba(244, 239, 230, 0.36);
+
+  /* Lines */
+  --line: rgba(244, 239, 230, 0.12);
+  --line-soft: rgba(244, 239, 230, 0.065);
+  --line-strong: rgba(244, 239, 230, 0.3);
+
+  /* Accent */
+  --accent: #93acff;
+  --accent-ink: #07080c;
+
+  /*
+   * Scrims sit over the 3D canvas, so they cannot be expressed with the surface
+   * tokens alone: they need the page colour at several opacities. Declared as
+   * channels so each gradient can pick its own alpha.
+   */
+  --scrim: 8 9 12;
+  /* Bottom scrim strength: in dark it grounds the figure, in light a strong one
+     would wash the legs out instead of shading them. */
+  --scrim-bottom: 0.94;
+
+  /* Solid button pair, kept explicit so it can invert with the theme. */
+  --solid-bg: #f4efe6;
+  --solid-fg: #0a0a0c;
+
+  /* Type */
+  --serif: 'Instrument Serif', 'Times New Roman', serif;
+  --sans: 'Inter Tight Variable', 'Inter Tight', system-ui, -apple-system, sans-serif;
+  --mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+
+  --fs-mono: clamp(0.625rem, 0.58rem + 0.18vw, 0.72rem);
+  --fs-body: clamp(0.98rem, 0.93rem + 0.22vw, 1.125rem);
+  --fs-lead: clamp(1.15rem, 1.02rem + 0.55vw, 1.6rem);
+  --fs-display: clamp(2.4rem, 1.25rem + 4.9vw, 5.6rem);
+  --fs-display-xl: clamp(2.85rem, 0.9rem + 7.4vw, 8.2rem);
+
+  /* Space */
+  --gutter: clamp(1.15rem, 0.6rem + 2.4vw, 3.75rem);
+  /* Height-driven, not width-driven: a wide short window was getting the same
+     padding as a tall one and pushing sections past the viewport. */
+  --section-y: clamp(2.75rem, 7vh, 7rem);
+  --nav-h: clamp(3.75rem, 4.4vw, 4.5rem);
+  --radius: 2px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --dur: 0.6s;
+}
+
+/* ==========================================================================
+   Light theme
+   --------------------------------------------------------------------------
+   Not an inversion. Paper keeps a warm cast, text keeps a warm black, and the
+   accent is darkened until it clears 4.5:1 against the surface — the blue that
+   reads well on near-black is unreadable on cream.
+   ========================================================================== */
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --ink: #f4efe6;
+  --ink-2: #ece5d9;
+  --ink-3: #e2d9ca;
+  --paper: #14110d;
+
+  --fg: #14110d;
+  --fg-muted: rgba(20, 17, 13, 0.64);
+  --fg-faint: rgba(20, 17, 13, 0.44);
+
+  --line: rgba(20, 17, 13, 0.16);
+  --line-soft: rgba(20, 17, 13, 0.09);
+  --line-strong: rgba(20, 17, 13, 0.34);
+
+  --accent: #3350c8;
+  --accent-ink: #f4efe6;
+
+  --scrim: 244 239 230;
+  --scrim-bottom: 0.82;
+
+  --solid-bg: #14110d;
+  --solid-fg: #f7f2e9;
+}

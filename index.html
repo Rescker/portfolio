@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Joaquim Mendes — Desenvolvedor &amp; Creative Engineer</title>
+    <meta
+      name="description"
+      content="Portfólio de Joaquim Mendes, desenvolvedor full-stack e creative engineer. Produtos digitais em TypeScript, WebGL e Three.js, com foco em movimento, tipografia e performance."
+    />
+    <meta name="theme-color" content="#08090c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Joaquim Mendes — Desenvolvedor &amp; Creative Engineer" />
+    <meta
+      property="og:description"
+      content="Produtos digitais que parecem físicos: TypeScript, WebGL e motion design."
+    />
+    <meta property="og:image" content="./assets/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>document.documentElement.classList.add("js")</script>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="fetch" href="./assets/emu.glb" crossorigin />
+  </head>
+  <body>
+    <a class="skip" href="#trabalho" data-i18n="a11y.skip">Pular para o conteúdo</a>
+
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true">
+      <span class="cursor__ring"></span>
+      <span class="cursor__dot"></span>
+      <span class="cursor__label"></span>
+    </div>
+
+    <div class="loader" data-loader aria-hidden="true">
+      <div class="loader__inner">
+        <div class="loader__row">
+          <span class="loader__label" data-i18n="loader.label">Montando a cena</span>
+          <span class="loader__count" data-loader-count>00</span>
+        </div>
+        <div class="loader__bar"><i></i></div>
+        <div class="loader__meta">
+          <span data-i18n="loader.engine">Three.js / WebGL2</span>
+          <span data-i18n="loader.year">Portfólio 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="nav" data-nav>
+      <a class="brand" href="#hero" data-magnetic>
+        <svg class="brand__mark" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <path d="M2 2h9v9H2z" stroke="currentColor" stroke-width="1.4" />
+          <path d="M15 2h9v9h-9z" stroke="currentColor" stroke-width="1.4" />
+          <path d="M2 15h9v9H2z" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="19.5" cy="19.5" r="4.5" fill="currentColor" />
+        </svg>
+        <span class="brand__name">Joaquim</span>
+        <span class="brand__role" data-i18n="nav.role">Fullstack engineer</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Seções">
+        <a href="#trabalho"><span class="mono">01</span> <span data-i18n="nav.work">Trabalho</span></a>
+        <a href="#sobre"><span class="mono">02</span> <span data-i18n="nav.about">Sobre</span></a>
+        <a href="#stack"><span class="mono">03</span> <span data-i18n="nav.stack">Stack</span></a>
+        <a href="#contato"><span class="mono">04</span> <span data-i18n="nav.contact">Contato</span></a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="nav__meta">
+          <span class="status"><i></i><span data-i18n="nav.status">Disponível para projetos</span></span>
+          <time class="mono" data-clock>--:--</time>
+        </div>
+
+        <div class="nav__controls">
+        <div class="locale" role="group" aria-label="Idioma" data-i18n-attr="aria-label:a11y.locale">
+          <button type="button" data-locale="pt" aria-pressed="true" aria-label="Português (Brasil)">
+            <span class="flag" aria-hidden="true">
+              <svg viewBox="0 0 20 14">
+                <rect width="20" height="14" rx="1.4" fill="#009b3a" />
+                <path d="M10 1.6 18.2 7 10 12.4 1.8 7Z" fill="#fedf00" />
+                <circle cx="10" cy="7" r="2.9" fill="#002776" />
+                <path d="M7.3 6.4a7.4 7.4 0 0 1 5.4 1.5" stroke="#fff" stroke-width="0.9" fill="none" />
+              </svg>
+            </span>
+            <span class="locale__code">PT</span>
+          </button>
+          <button type="button" data-locale="en" aria-pressed="false" aria-label="English (US)">
+            <span class="flag" aria-hidden="true">
+              <svg viewBox="0 0 20 14">
+                <rect width="20" height="14" rx="1.4" fill="#fff" />
+                <g fill="#b22234">
+                  <rect y="0" width="20" height="1.08" />
+                  <rect y="2.15" width="20" height="1.08" />
+                  <rect y="4.31" width="20" height="1.08" />
+                  <rect y="6.46" width="20" height="1.08" />
+                  <rect y="8.62" width="20" height="1.08" />
+                  <rect y="10.77" width="20" height="1.08" />
+                  <rect y="12.92" width="20" height="1.08" />
+                </g>
+                <rect width="9" height="7.54" fill="#3c3b6e" />
+              </svg>
+            </span>
+            <span class="locale__code">EN</span>
+          </button>
+        </div>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Alternar tema"
+          data-i18n-attr="aria-label:a11y.theme"
+        >
+          <svg class="theme-toggle__sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <circle cx="10" cy="10" r="3.4" />
+            <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.3 4.3l1.4 1.4M14.3 14.3l1.4 1.4M15.7 4.3l-1.4 1.4M5.7 14.3l-1.4 1.4" />
+          </svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M16 12.4A6.8 6.8 0 0 1 7.6 4a6.9 6.9 0 1 0 8.4 8.4Z" />
+          </svg>
+        </button>
+        </div>
+      </div>
+
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu">
+        <span data-i18n="nav.menu">Menu</span>
+        <i></i><i></i>
+      </button>
+    </header>
+
+    <div class="menu" id="menu" aria-hidden="true">
+      <nav class="menu__links" aria-label="Menu">
+        <a href="#trabalho"><span class="mono">01</span> <span data-i18n="nav.work">Trabalho</span></a>
+        <a href="#sobre"><span class="mono">02</span> <span data-i18n="nav.about">Sobre</span></a>
+        <a href="#stack"><span class="mono">03</span> <span data-i18n="nav.stack">Stack</span></a>
+        <a href="#contato"><span class="mono">04</span> <span data-i18n="nav.contact">Contato</span></a>
+      </nav>
+      <div class="menu__foot">
+        <a data-email href="#contato">contato</a>
+        <time class="mono" data-clock>--:--</time>
+      </div>
+    </div>
+
+    <main id="top">
+      <section class="hero" id="hero">
+        <div class="hero__stage" aria-hidden="true">
+          <img
+            class="hero__plate"
+            src="./assets/emu-poster.jpg"
+            alt=""
+            width="1600"
+            height="1000"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <canvas id="stage"></canvas>
+          <div class="hero__shade"></div>
+        </div>
+
+        <div class="hero__content">
+          <p class="eyebrow">
+            <span class="mono" data-i18n="hero.eyebrow">Fullstack · Java &amp; React</span>
+          </p>
+
+          <h1 class="hero__title" data-i18n-html="hero.title">
+            <span class="line"><span class="word">Interfaces</span></span>
+            <span class="line"><span class="word">que parecem</span></span>
+            <span class="line"><span class="word"><em>físicas</em>.</span></span>
+          </h1>
+
+          <p class="hero__lede" data-i18n="hero.lede">
+            Sou Joaquim, desenvolvedor fullstack. Java e Spring Boot no servidor, React e TypeScript
+            na interface — com cuidado obsessivo por detalhe, performance e acabamento.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="#trabalho" data-magnetic>
+              <span data-i18n="hero.ctaWork">Ver trabalho</span>
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" fill="none" />
+              </svg>
+            </a>
+            <a class="btn btn--ghost" href="#contato" data-magnetic data-cursor="Falar">
+              <span data-i18n="hero.ctaContact">Falar comigo</span>
+            </a>
+          </div>
+
+          <dl class="hero__meta">
+            <div>
+              <dt class="mono" data-i18n="hero.stackLabel">Stack</dt>
+              <dd data-i18n-html="hero.stackValue">Java · Spring <span class="mono">+</span> React · TS</dd>
+            </div>
+            <div>
+              <dt class="mono" data-i18n="hero.baseLabel">Base</dt>
+              <dd data-i18n-html="hero.baseValue">Brasil <span class="mono">GMT−3</span></dd>
+            </div>
+            <div>
+              <dt class="mono" data-i18n="hero.statusLabel">Status</dt>
+              <dd><span class="status"><i></i><span data-i18n="hero.statusValue">Disponível</span></span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <p class="hero__hint mono" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M2 8h5M9 4l4 4-4 4" />
+          </svg>
+          <span data-i18n="hero.drag">Arraste para girar</span>
+        </p>
+
+        <div class="hero__foot">
+          <span class="mono"><span data-i18n="hero.foot">Portfólio ©</span> <span data-year>2026</span></span>
+          <a class="scroll-cue" href="#trabalho">
+            <span class="mono" data-i18n="hero.scroll">Scroll</span>
+            <i></i>
+          </a>
+          <span class="mono" data-coords>GMT−3</span>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track" data-ticker>
+          <span>TypeScript</span><i>◆</i><span>Three.js</span><i>◆</i><span>WebGL</span><i>◆</i>
+          <span>React</span><i>◆</i><span>Motion design</span><i>◆</i><span>Design systems</span
+          ><i>◆</i><span>Node.js</span><i>◆</i><span>Performance</span><i>◆</i>
+          <span>TypeScript</span><i>◆</i><span>Three.js</span><i>◆</i><span>WebGL</span><i>◆</i>
+          <span>React</span><i>◆</i><span>Motion design</span><i>◆</i><span>Design systems</span
+          ><i>◆</i><span>Node.js</span><i>◆</i><span>Performance</span><i>◆</i>
+        </div>
+      </div>
+
+      <section class="work" id="trabalho">
+        <div class="section-head" data-reveal>
+          <span class="mono">01 / <span data-i18n="work.label">Trabalho</span></span>
+          <span class="section-head__line"></span>
+          <span class="mono" data-i18n="work.meta">Projetos públicos</span>
+        </div>
+
+        <ol class="work__list">
+          <li class="work-item" data-reveal>
+            <button class="work-item__head" type="button" aria-expanded="false" aria-controls="case-a3l" data-cursor="Abrir">
+              <span class="work-item__index mono">01</span>
+              <span class="work-item__title">A3L GUI Editor</span>
+              <span class="work-item__desc" data-i18n="work.a3l.desc">Editor visual de interfaces para Arma 3, no navegador</span>
+              <span class="work-item__year mono">2025</span>
+              <span class="work-item__toggle" aria-hidden="true"><i></i><i></i></span>
+            </button>
+            <div class="work-item__panel" id="case-a3l">
+              <div class="work-item__panel-inner">
+                <div class="case">
+                  <div class="case__col">
+                    <h4 class="mono" data-i18n="work.context">O problema</h4>
+                    <p data-i18n-html="work.a3l.context">
+                      Editar <span class="mono">config.cpp</span> para montar diálogos de Arma 3 é
+                      escrever à mão coordenadas num sistema de grid que ninguém consegue visualizar.
+                    </p>
+                  </div>
+                  <div class="case__col">
+                    <h4 class="mono" data-i18n="work.role">O que construí</h4>
+                    <p data-i18n-html="work.a3l.role">
+                      Canvas com arrastar, redimensionar e zoom, guias de alinhamento, seleção
+                      múltipla, undo/redo com coalescência de 200 ms e 51 presets de componentes.
+                      Suporta os três sistemas de coordenadas — <span class="mono">GUI_GRID</span>,
+                      <span class="mono">SafeZone</span> e absoluto — com import/export de config
+                      respeitando herança.
+                    </p>
+                  </div>
+                  <div class="case__col">
+                    <h4 class="mono" data-i18n="work.stack">Stack</h4>
+                    <ul class="tags">
+                      <li>TypeScript</li>
+                      <li>React 18</li>
+                      <li>Zustand</li>
+                      <li>Vite</li>
+                      <li>Tailwind</li>
+                      <li>Monaco</li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="case__link">
+                  <a class="inline-link" href="https://rescker.github.io/A3L-GUI-editor/" target="_blank" rel="noreferrer noopener" data-i18n="work.a3l.demo">
+                    Abrir o editor
+                  </a>
+                  <a class="inline-link" href="https://github.com/Rescker/A3L-GUI-editor" target="_blank" rel="noreferrer noopener" data-i18n="work.a3l.code">
+                    Código no GitHub
+                  </a>
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="work-item" data-reveal>
+            <button class="work-item__head" type="button" aria-expanded="false" aria-controls="case-telegram" data-cursor="Abrir">
+              <span class="work-item__index mono">02</span>
+              <span class="work-item__title">telegram-coder</span>
+              <span class="work-item__desc" data-i18n="work.telegram.desc">Um agente de código no seu PC, operado pelo Telegram</span>
+              <span class="work-item__year mono">2026</span>
+              <span class="work-item__toggle" aria-hidden="true"><i></i><i></i></span>
+            </button>
+            <div class="work-item__panel" id="case-telegram">
+              <div class="work-item__panel-inner">
+                <div class="case">
+                  <div class="case__col">
+                    <h4 class="mono" data-i18n="work.context">O problema</h4>
+                    <p data-i18n="work.telegram.context">
+                      Sessões de agente vivem no terminal. Acompanhar um turno longo do celular
+                      significa ou perder o progresso, ou abrir um cliente SSH.
+                    </p>
+                  </div>
+                  <div class="case__col">
+                    <h4 class="mono" data-i18n="work.role">O que construí</h4>
+                    <p data-i18n="work.telegram.role">
+                      Ponte por long-polling entre o Telegram e uma sessão local via NDJSON sobre
+                      stdin/stdout. Cada turno vira no máximo duas mensagens: a resposta, editada
+                      conforme o texto chega, e uma linha de atividade que lista as chamadas de
+                      ferramenta. Comandos de shell ficam atrás de botões Aprovar/Negar; mensagens
+                      no meio do turno entram como steering.
+                    </p>
+                  </div>
+                  <div class="case__col">
+                    <h4 class="mono" data-i18n="work.stack">Stack</h4>
+                    <ul class="tags">
+                      <li>Python</li>
+                      <li>asyncio</li>
+                      <li>python-telegram-bot</li>
+                      <li>JSON-RPC</li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="case__link">
+                  <a class="inline-link" href="https://github.com/Rescker/telegram-coder" target="_blank" rel="noreferrer noopener" data-i18n="work.telegram.code">
+                    Código no GitHub
+                  </a>
+                </p>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <p class="work__note" data-reveal data-i18n-html="work.note">
+          <span class="mono">Nota</span> — Estes dois são públicos. Trabalho profissional em produto
+          fica sob conversa.
+        </p>
+      </section>
+
+      <section class="manifesto" id="sobre">
+        <div class="section-head" data-reveal>
+          <span class="mono">02 / <span data-i18n="about.label">Sobre</span></span>
+          <span class="section-head__line"></span>
+          <span class="mono" data-i18n="about.meta">Brasil · GMT−3</span>
+        </div>
+
+        <h2 class="display" data-split-lines data-i18n-html="about.title">
+          Software deveria ser <em>sentido</em><br />antes de ser entendido.
+        </h2>
+
+        <div class="manifesto__grid">
+          <p class="manifesto__lead" data-reveal data-i18n="about.lead">
+            Gosto de construir software prático e intuitivo, em que a ideia sempre seja sanar o
+            problema — pelo caminho mais curto que a pessoa consegue entender sozinha.
+          </p>
+          <div class="manifesto__cols">
+            <p data-reveal data-i18n="about.p1">
+              No back-end trabalho com Spring Boot, PostgreSQL, MySQL e MongoDB, com Docker no
+              caminho até produção. No front, React com Vite e Tailwind, TypeScript sem atalhos e
+              atenção real a performance e acessibilidade.
+            </p>
+            <p data-reveal data-i18n-html="about.p2">
+              Gosto de ferramentas que resolvem um problema meu primeiro. O
+              <a class="inline-link" href="https://rescker.github.io/A3L-GUI-editor/" target="_blank" rel="noreferrer noopener">A3L GUI Editor</a>
+              nasceu de editar <span class="mono">config.cpp</span> à mão; o
+              <a class="inline-link" href="https://github.com/Rescker/telegram-coder" target="_blank" rel="noreferrer noopener">telegram-coder</a>,
+              de querer acompanhar um turno de agente sem abrir o terminal.
+            </p>
+          </div>
+          <dl class="facts" data-reveal>
+            <div>
+              <dt class="mono" data-i18n="about.baseLabel">Base</dt>
+              <dd data-i18n="about.baseValue">Brasil · GMT−3</dd>
+            </div>
+            <div>
+              <dt class="mono" data-i18n="about.focusLabel">Foco</dt>
+              <dd data-i18n="about.focusValue">Back-end Java · Front-end React</dd>
+            </div>
+            <div>
+              <dt class="mono" data-i18n="about.statusLabel">Status</dt>
+              <dd><span class="status"><i></i><span data-i18n="about.statusValue">Disponível</span></span></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="stack" id="stack">
+        <div class="section-head" data-reveal>
+          <span class="mono">03 / <span data-i18n="stack.label">Stack</span></span>
+          <span class="section-head__line"></span>
+          <span class="mono" data-i18n="stack.meta">Ferramentas do dia a dia</span>
+        </div>
+
+        <h2 class="display display--sm" data-split-lines data-i18n-html="stack.title">
+          Ferramentas que uso <em>todo dia</em>.
+        </h2>
+
+        <div class="stack__grid">
+          <article class="stack__col" data-reveal>
+            <h3 class="mono" data-i18n="stack.back">Back-end</h3>
+            <ul>
+              <li>Java</li>
+              <li>Spring Boot</li>
+              <li>PostgreSQL</li>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+            </ul>
+          </article>
+          <article class="stack__col" data-reveal>
+            <h3 class="mono" data-i18n="stack.front">Front-end</h3>
+            <ul>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Vite</li>
+              <li>Tailwind CSS</li>
+              <li>Zustand</li>
+            </ul>
+          </article>
+          <article class="stack__col" data-reveal>
+            <h3 class="mono" data-i18n="stack.infra">Infra</h3>
+            <ul>
+              <li>Docker</li>
+              <li>Git</li>
+              <li>CI/CD</li>
+              <li>Linux</li>
+              <li>GitHub Pages</li>
+            </ul>
+          </article>
+          <article class="stack__col" data-reveal>
+            <h3 class="mono" data-i18n="stack.extras">Extras</h3>
+            <ul>
+              <li>Python</li>
+              <li>asyncio</li>
+              <li>Monaco</li>
+              <li>Three.js</li>
+              <li>JSON-RPC</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contato">
+        <div class="section-head" data-reveal>
+          <span class="mono">04 / <span data-i18n="contact.label">Contato</span></span>
+          <span class="section-head__line"></span>
+          <span class="mono"><span class="status"><i></i><span data-i18n="contact.meta">Respondo em até 24h</span></span></span>
+        </div>
+
+        <h2 class="contact__title" data-split-lines data-i18n-html="contact.title">
+          Vamos construir algo<br />que <em>dure</em>.
+        </h2>
+
+        <div class="contact__grid">
+          <a class="contact__email" data-email data-magnetic data-cursor="Email">
+            <span class="contact__email-label mono" data-i18n="contact.email">Email</span>
+            <span class="contact__email-value" data-email-text>—</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.3" fill="none" />
+            </svg>
+          </a>
+
+          <div class="contact__side">
+            <ul class="contact__links" data-socials></ul>
+            <div class="contact__local">
+              <span class="mono" data-i18n="contact.local">Hora local</span>
+              <time data-clock class="contact__clock">--:--</time>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__row">
+        <span class="mono"><span data-i18n="footer.copy">Portfólio ©</span> <span data-year>2026</span> Joaquim Mendes</span>
+        <a class="footer__top" href="#hero" data-magnetic>
+          <span class="mono" data-i18n="footer.top">Topo</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M8 13V3M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.4" fill="none" />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
