@@ -3,6 +3,9 @@
 Site pessoal em Vite + TypeScript + Three.js r187 + GSAP + Lenis. O hero é um
 personagem glTF animado por código, com a cabeça acompanhando o ponteiro.
 
+**No ar:** https://rescker.github.io/portfolio/ — deploy automático a cada push
+na `main`, via GitHub Actions (`.github/workflows/deploy.yml`).
+
 ## Comandos
 
 ```bash
