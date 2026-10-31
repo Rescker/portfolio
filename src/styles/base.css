@@ -22,35 +22,48 @@ body {
 /* ==========================================================================
    Scrollbar
    --------------------------------------------------------------------------
-   Two code paths, because Chromium ignores `::-webkit-scrollbar` as soon as
-   `scrollbar-width` is set — so declaring both would silently fall back to the
-   plain thin bar. Firefox gets the standard properties; Chromium and Safari get
-   the pseudo-elements, which is what allows the rounded capsule.
+   Only the thumb is painted. Every container the engine offers is set to
+   transparent explicitly — `::-webkit-scrollbar`, `-track`, `-track-piece` and
+   the buttons — because leaving any one of them unset lets the engine fall back
+   to its own track fill, which is the grey strip this was meant to remove.
 
-   The thumb is inset by a border painted in the page colour, so it reads as a
-   floating capsule with air around it instead of a bar glued to the edge. Every
-   colour is a token, so both themes are covered without a second rule.
+   The thumb is inset with a *transparent* border and `background-clip:
+   padding-box`, so it floats as a capsule over whatever is behind it. Painting
+   that border in the page colour would work on flat areas and look pasted on
+   over the 3D canvas or a gradient.
    ========================================================================== */
 
 @supports not selector(::-webkit-scrollbar) {
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+    /* The second value is the track: transparent means no strip in Firefox. */
+    scrollbar-color: var(--scroll-thumb) transparent;
   }
 }
 
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
+  background: transparent;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--scroll-track);
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+  border: 0;
+}
+
+/* Windows draws arrow buttons unless they are explicitly removed. */
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--scroll-thumb);
-  border: 3px solid var(--ink);
+  /* 3px of transparent border on each side leaves a 6px capsule. */
+  border: 3px solid transparent;
   border-radius: 999px;
   background-clip: padding-box;
 }

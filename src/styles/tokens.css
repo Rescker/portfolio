@@ -38,7 +38,6 @@
   /* Scrollbar: the thumb is a quiet ink wash, not a UI chrome colour. */
   --scroll-thumb: rgba(244, 239, 230, 0.22);
   --scroll-thumb-hover: rgba(244, 239, 230, 0.38);
-  --scroll-track: transparent;
 
   /* Solid button pair, kept explicit so it can invert with the theme. */
   --solid-bg: #f4efe6;
@@ -101,7 +100,6 @@
 
   --scroll-thumb: rgba(20, 17, 13, 0.26);
   --scroll-thumb-hover: rgba(20, 17, 13, 0.44);
-  --scroll-track: transparent;
 
   --solid-bg: #14110d;
   --solid-fg: #f7f2e9;
