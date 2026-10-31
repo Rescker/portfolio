@@ -38,9 +38,9 @@ export const pt = {
 
   'about.label': 'Sobre',
   'about.meta': 'Brasil · GMT−3',
-  'about.title': 'Software deveria ser <em>sentido</em><br />antes de ser entendido.',
+  'about.title': 'A solução mais curta<br />é a que a pessoa <em>entende</em>.',
   'about.lead':
-    'Gosto de construir software prático e intuitivo, em que a ideia sempre seja sanar o problema — pelo caminho mais curto que a pessoa consegue entender sozinha.',
+    'Gosto de software prático e intuitivo: a ideia é sanar o problema, não exibir a solução. Isso decide arquitetura, tela e até o que eu deixo de construir.',
   'about.p1':
     'No back-end trabalho com Spring Boot, PostgreSQL, MySQL e MongoDB, com Docker no caminho até produção. No front, React com Vite e Tailwind, TypeScript sem atalhos e atenção real a performance e acessibilidade.',
   'about.p2':
@@ -131,9 +131,9 @@ export const en: Record<MessageKey, string> = {
 
   'about.label': 'About',
   'about.meta': 'Brazil · GMT−3',
-  'about.title': 'Software should be <em>felt</em><br />before it is understood.',
+  'about.title': 'The shortest solution<br />is the one you <em>understand</em>.',
   'about.lead':
-    'I like building software that is practical and obvious, where the point is always to solve the problem — by the shortest path someone can follow on their own.',
+    'I like software that is practical and obvious: the point is to solve the problem, not to show off the solution. That decides architecture, screens, and what I choose not to build.',
   'about.p1':
     'On the back end I work with Spring Boot, PostgreSQL, MySQL and MongoDB, with Docker on the way to production. On the front end, React with Vite and Tailwind, TypeScript without shortcuts, and real attention to performance and accessibility.',
   'about.p2':
